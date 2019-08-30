@@ -4,7 +4,9 @@
   [fields]="regConfig"></app-dynamic-form>
 
 <div style="margin-top: 40px;">
-  {{ form.value | json }}
+  <pre>
+    {{ form.value | json }}
+  </pre>
 </div>
 
 <router-outlet></router-outlet>

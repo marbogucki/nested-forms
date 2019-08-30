@@ -34,9 +34,10 @@ export class DynamicFormComponent implements OnInit {
 
   createControl() {
     const group = this.fb.group({});
+
     this.fields.forEach(field => {
-      if (field.type === 'button') {
-        return;
+      if (field.nested) {
+        group.addControl('nested', this.fb.array([...field.nested]));
       }
       const control = this.fb.control(
         field.value,

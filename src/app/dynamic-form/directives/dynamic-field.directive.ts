@@ -2,6 +2,7 @@ import {ComponentFactoryResolver, Directive, Input, OnInit, ViewContainerRef} fr
 import {InputComponent} from '../input/input.component';
 import {FormGroup} from '@angular/forms';
 import {FieldConfig} from '../field-config.types';
+import {ButtonComponent} from '../button/button.component';
 
 @Directive({
   selector: '[appDynamicField]'
@@ -27,5 +28,6 @@ export class DynamicFieldDirective implements OnInit {
 }
 
 const componentMapper = {
-  input: InputComponent
+  input: InputComponent,
+  button: ButtonComponent
 };

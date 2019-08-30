@@ -10,6 +10,7 @@ import { DynamicFormComponent } from './dynamic-form/dynamic-form.component';
 import { InputComponent } from './dynamic-form/input/input.component';
 import { DynamicFieldDirective } from './dynamic-form/directives/dynamic-field.directive';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import { ButtonComponent } from './dynamic-form/button/button.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
     NestedFormComponent,
     DynamicFormComponent,
     InputComponent,
-    DynamicFieldDirective
+    DynamicFieldDirective,
+    ButtonComponent
   ],
   imports: [
     BrowserModule,
@@ -28,6 +30,7 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
   ],
   entryComponents: [
     InputComponent,
+    ButtonComponent
   ],
   providers: [],
   bootstrap: [AppComponent]

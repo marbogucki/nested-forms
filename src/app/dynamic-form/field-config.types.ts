@@ -9,4 +9,5 @@ export interface FieldConfig {
   info?: string;
   description?: string;
   validations?: any[];
+  nested?: any[];
 }
