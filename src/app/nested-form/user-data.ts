@@ -4,7 +4,14 @@ export const userData = {
       id: 1,
       city: 'Warszawa',
       nested: [
-        { id: 1, address: 'Wielkopolska' },
+        {
+          id: 1,
+          address: 'Wielkopolska',
+          nested: [
+            { id: 1,  info: 'lorem 1' },
+            { id: 2,  info: 'lorem 2' }
+          ]
+        },
         { id: 2, address: 'Marszałkowska' },
       ]
     },
