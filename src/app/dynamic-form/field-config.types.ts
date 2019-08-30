@@ -6,5 +6,7 @@ export interface FieldConfig {
   collections?: any;
   type: string;
   value?: any;
+  info?: string;
+  description?: string;
   validations?: any[];
 }

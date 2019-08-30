@@ -12,22 +12,17 @@ export class AppComponent {
   @ViewChild(DynamicFormComponent) form: DynamicFormComponent;
   regConfig: FieldConfig[] = [
     {
-      type: 'input',
-      label: 'Username',
-      inputType: 'text',
-      name: 'name',
+      type: 'input', label: '', inputType: 'text', name: 'passwordMin', value: '1',
+      info: 'Minimalna długość hasła',
+      description: 'Ilość znaków 1-16',
       validations: [
-        {
-          name: 'required',
-          validator: Validators.required,
-          message: 'Name Required'
-        },
-        {
-          name: 'pattern',
-          validator: Validators.pattern('^[a-zA-Z]+$'),
-          message: 'Accept only text'
-        }
+        { name: 'required', validator: Validators.required, message: 'Field Required' }
       ]
+    },
+    {
+      type: 'input', label: '', inputType: 'text', name: 'specialSignsMin', value: '0', validations: [],
+      info: 'Minimalna ilość znaków specjalnych',
+      description: 'Ilość znaków: 1-4 lub 0 dla braku'
     }
   ];
 }

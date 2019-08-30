@@ -3,4 +3,8 @@
 <app-dynamic-form
   [fields]="regConfig"></app-dynamic-form>
 
+<div style="margin-top: 40px;">
+  {{ form.value | json }}
+</div>
+
 <router-outlet></router-outlet>
