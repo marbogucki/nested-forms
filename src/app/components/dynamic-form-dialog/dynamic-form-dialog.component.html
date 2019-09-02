@@ -1,0 +1,17 @@
+
+<div>
+  <h1 mat-dialog-title>CONFIGURATION</h1>
+</div>
+
+<div mat-dialog-content>
+  <app-form-dialog
+    #appFormDialog
+    [phone]="phoneData"></app-form-dialog>
+</div>
+<div mat-dialog-actions>
+  <hr />
+  <button
+    mat-button
+    [mat-dialog-close]="appFormDialog.form.value"
+    cdkFocusInitial>SAVE</button>
+</div>

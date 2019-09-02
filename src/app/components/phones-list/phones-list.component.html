@@ -1,0 +1,8 @@
+<div *ngFor="let phone of phones">
+  <h4>{{ phone.name }}</h4>
+  <button
+    mat-raised-button
+    color="primary"
+    (click)="openDialogEditPhone(phone)">Edit</button>
+  <hr />
+</div>

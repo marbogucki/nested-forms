@@ -1,12 +1,17 @@
 <!--<app-nested-form></app-nested-form>-->
 
-<app-dynamic-form
-  [fields]="regConfig"></app-dynamic-form>
+<!--<app-dynamic-form-->
+<!--  [fields]="regConfig"></app-dynamic-form>-->
 
-<div style="margin-top: 40px;">
-  <pre>
-    {{ form.value | json }}
-  </pre>
-</div>
+<!--<div style="margin-top: 40px;">-->
+<!--  <pre>-->
+<!--    {{ form.value | json }}-->
+<!--  </pre>-->
+<!--</div>-->
+
+<app-phones-list
+  [phones]="phones"
+  (phoneDataToEdit)="openDialogEditPhone($event)"
+></app-phones-list>
 
 <router-outlet></router-outlet>
