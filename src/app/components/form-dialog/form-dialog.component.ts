@@ -20,6 +20,7 @@ export class FormDialogComponent implements OnInit {
 
   private buildForm() {
     this.form = this.fb.group({
+      id: this.phone.id,
       name: this.phone.name
     });
   }
