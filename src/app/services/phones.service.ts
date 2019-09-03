@@ -1,6 +1,4 @@
 import { Injectable } from '@angular/core';
-import {of} from 'rxjs';
-import {FieldConfig} from '../dynamic-form/field-config.types';
 import {Validators} from '@angular/forms';
 import {HttpClient} from '@angular/common/http';
 
@@ -9,7 +7,7 @@ import {HttpClient} from '@angular/common/http';
 })
 export class PhonesService {
 
-  regConfig: FieldConfig[] = [
+  regConfig = [
     {
       type: 'input', label: '', inputType: 'text', name: 'passwordMin', value: '1',
       info: 'Minimalna długość hasła',
@@ -41,7 +39,23 @@ export class PhonesService {
   }
 }
 
-export interface Phone {
+export interface PhoneData {
   id: number;
   name: string;
+  config: any[];
+}
+
+export interface FormField {
+  label?: string;
+  name?: string;
+  inputType?: string;
+  value?: string;
+  validations?: Validator[];
+  type?: string;
+}
+
+export interface Validator {
+  name: string;
+  validator: any;
+  message: string;
 }

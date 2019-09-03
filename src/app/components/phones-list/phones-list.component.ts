@@ -1,5 +1,5 @@
 import {Component, EventEmitter, Input, Output} from '@angular/core';
-import {Phone} from '../../services/phones.service';
+import {PhoneData} from '../../services/phones.service';
 
 @Component({
   selector: 'app-phones-list',
@@ -8,12 +8,12 @@ import {Phone} from '../../services/phones.service';
 })
 export class PhonesListComponent {
 
-  @Input() phones: Phone[];
-  @Output() phoneDataToEdit: EventEmitter<Phone> = new EventEmitter<Phone>();
+  @Input() phones: PhoneData[];
+  @Output() phoneDataToEdit: EventEmitter<PhoneData> = new EventEmitter<PhoneData>();
 
   constructor() { }
 
-  openDialogEditPhone(phone: Phone) {
+  openDialogEditPhone(phone: PhoneData) {
     this.phoneDataToEdit.emit(phone);
   }
 }

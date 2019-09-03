@@ -1,6 +1,40 @@
 {
   "phones": [
-    { "id": 1, "name": "Sony" },
-    { "id": 2, "name": "Panasonic" }
+    {
+      "id": 1,
+      "name": "Sony",
+      "config": [
+        {
+          "type": "input",
+          "label": "enter text 1.1.",
+          "inputType": "text",
+          "name": "test-1-1",
+          "value": "aaa",
+          "validations": []
+        },
+        {
+          "type": "input",
+          "label": "enter text 1.2",
+          "inputType": "text",
+          "name": "test-1-2",
+          "value": "bbb",
+          "validations": []
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "name": "Panasonic",
+      "config": [
+        {
+          "type": "input",
+          "label": "",
+          "inputType": "text",
+          "name": "",
+          "value": "test 2",
+          "validations": []
+        }
+      ]
+    }
   ]
 }

@@ -1,6 +1,5 @@
 import {Component, OnInit, ViewChild} from '@angular/core';
-import {DynamicFormComponent} from './dynamic-form/dynamic-form.component';
-import {Phone, PhonesService} from './services/phones.service';
+import {PhoneData, PhonesService} from './services/phones.service';
 import {MatDialog} from '@angular/material';
 import {DynamicFormDialogComponent} from './components/dynamic-form-dialog/dynamic-form-dialog.component';
 
@@ -10,8 +9,7 @@ import {DynamicFormDialogComponent} from './components/dynamic-form-dialog/dynam
   styleUrls: ['./app.component.css']
 })
 export class AppComponent implements OnInit {
-  @ViewChild(DynamicFormComponent) form: DynamicFormComponent;
-  phones: Phone[];
+  phones: PhoneData[];
 
   constructor(
     private phonesService: PhonesService,
@@ -20,13 +18,17 @@ export class AppComponent implements OnInit {
 
   ngOnInit() {
     this.phonesService.getPhones()
-      .subscribe((itemsPhones: Phone[]) => this.phones = itemsPhones);
+      .subscribe((itemsPhones: PhoneData[]) => this.phones = itemsPhones);
   }
 
-  openDialogEditPhone(phone: Phone) {
+  openDialogEditPhone(phone: PhoneData) {
     const dialogRef = this.formDialog.open(DynamicFormDialogComponent, {
       width: '80vh',
-      data: phone
+      data: {
+        title: 'Android Managed Configuration',
+        phone
+      },
+      panelClass: 'custom-form-dialog'
     });
 
     dialogRef.afterClosed().subscribe((result) => {

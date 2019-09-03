@@ -1,0 +1,12 @@
+<form [formGroup]="form">
+  <p>ID: <b>{{ phoneConfig.id }}</b></p>
+  <p>Phone name: <b>{{ phoneConfig.name }}</b></p>
+
+  <ng-container
+    *ngFor="let fieldForm of phoneConfig.config"
+    appDynamicFormField
+    [field]="fieldForm"
+    [group]="form"></ng-container>
+
+  {{ phoneConfig.config | json }}
+</form>

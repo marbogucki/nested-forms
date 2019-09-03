@@ -4,3 +4,17 @@
 .demo-full-width {
   width: 100%;
 }
+
+.custom-form-dialog .mat-dialog-container {
+  padding: 0;
+}
+
+.custom-form-dialog .mat-dialog-content {
+  margin: 0;
+  padding: 20px;
+}
+
+.custom-form-dialog .mat-dialog-actions{
+  margin: 0;
+  padding: 10px 20px;
+}

@@ -1,7 +1,6 @@
-import {Component, EventEmitter, Inject, OnInit, Output, ViewChild} from '@angular/core';
+import {Component, EventEmitter, Inject, Output} from '@angular/core';
 import {MAT_DIALOG_DATA} from '@angular/material/dialog';
-import {Phone} from '../../services/phones.service';
-import {FormDialogComponent} from '../form-dialog/form-dialog.component';
+import {PhoneData} from '../../services/phones.service';
 
 @Component({
   selector: 'app-dynamic-form-dialog',
@@ -10,9 +9,13 @@ import {FormDialogComponent} from '../form-dialog/form-dialog.component';
 })
 export class DynamicFormDialogComponent {
 
-  @ViewChild(FormDialogComponent) appFormDialog: FormDialogComponent;
-  @Output() saveDataToEmit: EventEmitter<Phone> = new EventEmitter();
+  @Output() saveDataToEmit: EventEmitter<PhoneData> = new EventEmitter();
   constructor(
-    @Inject(MAT_DIALOG_DATA) public phoneData
-  ) { }
+    @Inject(MAT_DIALOG_DATA) public formData: FormData
+  ) {}
+}
+
+export interface FormData {
+  title: string;
+  phone: PhoneData;
 }
