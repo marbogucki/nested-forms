@@ -10,7 +10,18 @@
           "inputType": "text",
           "name": "test-1-1",
           "value": "aaa",
-          "validations": []
+          "validations": [
+            {
+              "name": "required",
+              "validator": "required",
+              "message": "test-1-1 is required"
+            },
+            {
+              "name": "pattern",
+              "validator": "^[a-zA-Z]+$",
+              "message": "Accept only text"
+            }
+          ]
         },
         {
           "type": "input",
