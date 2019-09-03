@@ -6,28 +6,28 @@
       "config": [
         {
           "type": "input",
-          "label": "enter text 1.1.",
+          "label": "Element 1.1",
           "inputType": "text",
-          "name": "test-1-1",
-          "value": "aaa",
+          "name": "element-1-1",
+          "value": "",
           "validations": [
             {
               "name": "required",
               "validator": "required",
-              "message": "test-1-1 is required"
+              "message": "Element 1.1 is required"
             },
             {
               "name": "pattern",
               "validator": "^[a-zA-Z]+$",
-              "message": "Accept only text"
+              "message": "Element 1.1 accept only text"
             }
           ]
         },
         {
           "type": "input",
-          "label": "enter text 1.2",
+          "label": "Element 1.2",
           "inputType": "text",
-          "name": "test-1-2",
+          "name": "element-1-2",
           "value": "bbb",
           "validations": []
         }
