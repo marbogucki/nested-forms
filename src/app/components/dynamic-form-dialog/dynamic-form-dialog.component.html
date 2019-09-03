@@ -5,6 +5,8 @@
 
 <div mat-dialog-content>
   <app-dynamic-form [phoneConfig]="formData.phone"></app-dynamic-form>
+
+  {{ dynamicFormComponent.form.value | json }}
 </div>
 
 <div mat-dialog-actions>
