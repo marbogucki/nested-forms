@@ -57,6 +57,18 @@
           "label": "Option checkbox",
           "name": "term",
           "value": true
+        },
+        {
+          "type": "date",
+          "label": "Datepicker",
+          "name": "datepicker",
+          "validations": [
+            {
+              "name": "required",
+              "validator": "required",
+              "message": "Date of Birth Required"
+            }
+          ]
         }
       ]
     },

@@ -15,6 +15,7 @@ import { DynamicFormFieldDirective } from './directives/dynamic-form-field.direc
 import { FormSelectComponent } from './components/form/form-select/form-select.component';
 import { FormRadioComponent } from './components/form/form-radio/form-radio.component';
 import { FormCheckboxComponent } from './components/form/form-checkbox/form-checkbox.component';
+import { FormDateComponent } from './components/form/form-date/form-date.component';
 
 @NgModule({
   declarations: [
@@ -27,6 +28,7 @@ import { FormCheckboxComponent } from './components/form/form-checkbox/form-chec
     FormSelectComponent,
     FormRadioComponent,
     FormCheckboxComponent,
+    FormDateComponent,
   ],
   imports: [
     BrowserModule,
@@ -41,7 +43,8 @@ import { FormCheckboxComponent } from './components/form/form-checkbox/form-chec
     FormInputComponent,
     FormSelectComponent,
     FormRadioComponent,
-    FormCheckboxComponent
+    FormCheckboxComponent,
+    FormDateComponent
   ],
   providers: [],
   bootstrap: [AppComponent]
