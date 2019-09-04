@@ -3,6 +3,8 @@ import {FormGroup} from '@angular/forms';
 import {FormField} from '../services/phones.service';
 import {FormInputComponent} from '../components/form/form-input/form-input.component';
 import {FormSelectComponent} from '../components/form/form-select/form-select.component';
+import {FormRadioComponent} from '../components/form/form-radio/form-radio.component';
+import {FormCheckboxComponent} from '../components/form/form-checkbox/form-checkbox.component';
 
 @Directive({
   selector: '[appDynamicFormField]'
@@ -28,5 +30,7 @@ export class DynamicFormFieldDirective implements OnInit {
 
 const components = {
   input: FormInputComponent,
-  select: FormSelectComponent
+  select: FormSelectComponent,
+  radiobutton: FormRadioComponent,
+  checkbox: FormCheckboxComponent
 };

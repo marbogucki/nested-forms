@@ -13,6 +13,8 @@ import {ReactiveFormsModule} from '@angular/forms';
 import { FormInputComponent } from './components/form/form-input/form-input.component';
 import { DynamicFormFieldDirective } from './directives/dynamic-form-field.directive';
 import { FormSelectComponent } from './components/form/form-select/form-select.component';
+import { FormRadioComponent } from './components/form/form-radio/form-radio.component';
+import { FormCheckboxComponent } from './components/form/form-checkbox/form-checkbox.component';
 
 @NgModule({
   declarations: [
@@ -23,6 +25,8 @@ import { FormSelectComponent } from './components/form/form-select/form-select.c
     FormInputComponent,
     DynamicFormFieldDirective,
     FormSelectComponent,
+    FormRadioComponent,
+    FormCheckboxComponent,
   ],
   imports: [
     BrowserModule,
@@ -35,7 +39,9 @@ import { FormSelectComponent } from './components/form/form-select/form-select.c
   entryComponents: [
     DynamicFormDialogComponent,
     FormInputComponent,
-    FormSelectComponent
+    FormSelectComponent,
+    FormRadioComponent,
+    FormCheckboxComponent
   ],
   providers: [],
   bootstrap: [AppComponent]
