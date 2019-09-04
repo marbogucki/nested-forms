@@ -37,7 +37,6 @@ export class DynamicFormComponent implements OnInit {
           validList.push(Validators[valid.validator]);
         }
       });
-      console.log(Validators.compose(validList));
       return Validators.compose(validList);
     }
     return null;

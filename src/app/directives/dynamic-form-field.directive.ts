@@ -2,6 +2,7 @@ import {ComponentFactoryResolver, Directive, Input, OnInit, ViewContainerRef} fr
 import {FormGroup} from '@angular/forms';
 import {FormField} from '../services/phones.service';
 import {FormInputComponent} from '../components/form/form-input/form-input.component';
+import {FormSelectComponent} from '../components/form/form-select/form-select.component';
 
 @Directive({
   selector: '[appDynamicFormField]'
@@ -26,5 +27,6 @@ export class DynamicFormFieldDirective implements OnInit {
 }
 
 const components = {
-  input: FormInputComponent
+  input: FormInputComponent,
+  select: FormSelectComponent
 };

@@ -12,6 +12,7 @@ import { DynamicFormComponent } from './components/dynamic-form/dynamic-form.com
 import {ReactiveFormsModule} from '@angular/forms';
 import { FormInputComponent } from './components/form/form-input/form-input.component';
 import { DynamicFormFieldDirective } from './directives/dynamic-form-field.directive';
+import { FormSelectComponent } from './components/form/form-select/form-select.component';
 
 @NgModule({
   declarations: [
@@ -21,6 +22,7 @@ import { DynamicFormFieldDirective } from './directives/dynamic-form-field.direc
     DynamicFormComponent,
     FormInputComponent,
     DynamicFormFieldDirective,
+    FormSelectComponent,
   ],
   imports: [
     BrowserModule,
@@ -32,7 +34,8 @@ import { DynamicFormFieldDirective } from './directives/dynamic-form-field.direc
   ],
   entryComponents: [
     DynamicFormDialogComponent,
-    FormInputComponent
+    FormInputComponent,
+    FormSelectComponent
   ],
   providers: [],
   bootstrap: [AppComponent]

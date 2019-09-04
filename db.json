@@ -6,28 +6,42 @@
       "config": [
         {
           "type": "input",
-          "label": "Element 1.1",
+          "label": "Text element 1.1",
           "inputType": "text",
-          "name": "element-1-1",
+          "name": "text-element-1-1",
           "value": "",
           "validations": [
             {
               "name": "required",
               "validator": "required",
-              "message": "Element 1.1 is required"
+              "message": "Text element 1.1 is required"
             },
             {
               "name": "pattern",
               "validator": "^[a-zA-Z]+$",
-              "message": "Element 1.1 accept only text"
+              "message": "Text element 1.1 accept only text"
+            }
+          ]
+        },
+        {
+          "type": "select",
+          "label": "Select element",
+          "name": "select-element",
+          "value": "",
+          "options": ["option 1", "option 2", "option 3", "option 4"],
+          "validations": [
+            {
+              "name": "required",
+              "validator": "required",
+              "message": "Select element is required"
             }
           ]
         },
         {
           "type": "input",
-          "label": "Element 1.2",
+          "label": "Text element 1.2",
           "inputType": "text",
-          "name": "element-1-2",
+          "name": "text-element-1-2",
           "value": "bbb",
           "validations": []
         }
