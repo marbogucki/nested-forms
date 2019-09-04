@@ -19,7 +19,8 @@ export class DynamicFormComponent implements OnInit {
   }
 
   createGroup() {
-    const group = this.fb.group({});
+    const { id, name } = this.phoneConfig;
+    const group = this.fb.group({id, name});
     this.phoneConfig.config.forEach(field => {
       const control = this.fb.control(field.value, this.bindValidations(field.validations || []));
       group.addControl(field.name, control);
