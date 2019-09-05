@@ -20,6 +20,7 @@ import { FormSlideToggleComponent } from './components/form/form-slide-toggle/fo
 import {DynamicFancyFormComponent} from './components/dynamic-fancy-form/dynamic-fancy-form.component';
 import {DynamicFancyFormDialogComponent} from './components/dynamic-fancy-form-dialog/dynamic-fancy-form-dialog.component';
 import {DynamicFancyFormFieldDirective} from './directives/dynamic-fancy-form-field.directive';
+import {FormFancyInputComponent} from './components/fancy-form/form-fancy-input/form-fancy-input.component';
 
 @NgModule({
   declarations: [
@@ -37,6 +38,7 @@ import {DynamicFancyFormFieldDirective} from './directives/dynamic-fancy-form-fi
     FormCheckboxComponent,
     FormDateComponent,
     FormSlideToggleComponent,
+    FormFancyInputComponent
   ],
   imports: [
     BrowserModule,
@@ -54,7 +56,8 @@ import {DynamicFancyFormFieldDirective} from './directives/dynamic-fancy-form-fi
     FormRadioComponent,
     FormCheckboxComponent,
     FormDateComponent,
-    FormSlideToggleComponent
+    FormSlideToggleComponent,
+    FormFancyInputComponent
   ],
   providers: [],
   bootstrap: [AppComponent]

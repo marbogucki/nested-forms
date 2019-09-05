@@ -20,11 +20,13 @@ export interface FancyDevice {
 }
 
 export interface FancyParameters {
-  param?: {
-    name?: string;
-    description?: string;
-    field_type?: 'string' | 'select';
-    value?: string;
-    child_params?: any[];
-  };
+  param?: FancyDeviceParam;
+}
+
+export interface FancyDeviceParam {
+  name?: string;
+  description?: string;
+  field_type?: 'string' | 'select';
+  value?: string;
+  child_params?: any[];
 }

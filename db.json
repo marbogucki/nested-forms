@@ -217,7 +217,7 @@
                 "name":"Disallowed strings",
                 "description":"Strings that cannot be used in lock code, e.g. test, password",
                 "field_type":"string",
-                "value":"1234",
+                "value":"1234"
               }
             }
           ]

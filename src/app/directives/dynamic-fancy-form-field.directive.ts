@@ -1,18 +1,13 @@
 import {ComponentFactoryResolver, Directive, Input, OnInit, ViewContainerRef} from '@angular/core';
 import {FormGroup} from '@angular/forms';
-import {FormField} from '../services/phones.service';
-import {FormInputComponent} from '../components/form/form-input/form-input.component';
-import {FormSelectComponent} from '../components/form/form-select/form-select.component';
-import {FormRadioComponent} from '../components/form/form-radio/form-radio.component';
-import {FormCheckboxComponent} from '../components/form/form-checkbox/form-checkbox.component';
-import {FormDateComponent} from '../components/form/form-date/form-date.component';
-import {FormSlideToggleComponent} from '../components/form/form-slide-toggle/form-slide-toggle.component';
+import {FormFancyInputComponent} from '../components/fancy-form/form-fancy-input/form-fancy-input.component';
+import {FancyDeviceParam} from '../services/fancy.service';
 
 @Directive({
   selector: '[appDynamicFancyFormField]'
 })
 export class DynamicFancyFormFieldDirective implements OnInit {
-  @Input() field: FormField;
+  @Input() field: FancyDeviceParam;
   @Input() group: FormGroup;
   componentRef: any;
 
@@ -22,7 +17,7 @@ export class DynamicFancyFormFieldDirective implements OnInit {
   ) {}
 
   ngOnInit() {
-    const component = components[this.field.type];
+    const component = components[this.field.field_type];
     const factory = this.componentFactoryResolver.resolveComponentFactory(component);
     this.componentRef = this.viewContainerRef.createComponent(factory);
     this.componentRef.instance.field = this.field;
@@ -31,10 +26,5 @@ export class DynamicFancyFormFieldDirective implements OnInit {
 }
 
 const components = {
-  input: FormInputComponent,
-  select: FormSelectComponent,
-  radiobutton: FormRadioComponent,
-  checkbox: FormCheckboxComponent,
-  date: FormDateComponent,
-  slideToggle: FormSlideToggleComponent
+  string: FormFancyInputComponent,
 };
