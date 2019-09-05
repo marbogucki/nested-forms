@@ -51,7 +51,7 @@ export interface FormField {
   label?: string;
   name?: string;
   inputType?: string;
-  value?: string;
+  value?: string | boolean;
   validations?: Validator[];
   type?: string;
   options?: string;

@@ -30,7 +30,8 @@
           "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi aspernatur consequuntur deleniti, deserunt eos\n      facilis fugiat libero odit suscipit unde.",
           "type": "slideToggle",
           "label": "Slide Toggle",
-          "checked": true,
+          "name": "slide-toggle-element",
+          "value": true,
           "disabled": false
         },
         {
