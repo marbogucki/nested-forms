@@ -42,10 +42,12 @@ export class PhonesService {
 export interface PhoneData {
   id: number;
   name: string;
-  config: any[];
+  config: FormField[];
 }
 
 export interface FormField {
+  title?: string;
+  description?: string;
   label?: string;
   name?: string;
   inputType?: string;

@@ -5,6 +5,8 @@
       "name": "Sony",
       "config": [
         {
+          "title": "Input Text - lorem ipsum dolor sit amet",
+          "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi aspernatur consequuntur deleniti, deserunt eos\n      facilis fugiat libero odit suscipit unde.",
           "type": "input",
           "label": "Text element 1.1",
           "inputType": "text",
@@ -24,12 +26,16 @@
           ]
         },
         {
+          "title": "Slide toggle button - lorem ipsum dolor sit amet",
+          "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi aspernatur consequuntur deleniti, deserunt eos\n      facilis fugiat libero odit suscipit unde.",
           "type": "slideToggle",
           "label": "Slide Toggle",
           "checked": true,
-          "disabled": true
+          "disabled": false
         },
         {
+          "title": "Select - lorem ipsum dolor sit amet",
+          "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi aspernatur consequuntur deleniti, deserunt eos\n      facilis fugiat libero odit suscipit unde.",
           "type": "select",
           "label": "Select element",
           "name": "select-element",
@@ -44,6 +50,8 @@
           ]
         },
         {
+          "title": "Radio button - lorem ipsum dolor sit amet",
+          "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi aspernatur consequuntur deleniti, deserunt eos\n      facilis fugiat libero odit suscipit unde.",
           "type": "radiobutton",
           "label": "Select option",
           "name": "radio-option",
@@ -51,6 +59,8 @@
           "value": "Option 2"
         },
         {
+          "title": "Input Text Lorem ipsum dolor sit amet",
+          "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi aspernatur consequuntur deleniti, deserunt eos\n      facilis fugiat libero odit suscipit unde.",
           "type": "input",
           "label": "Text element 1.2",
           "inputType": "text",
@@ -59,12 +69,16 @@
           "validations": []
         },
         {
+          "title": "Checkbox - lorem ipsum dolor sit amet",
+          "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi aspernatur consequuntur deleniti, deserunt eos\n      facilis fugiat libero odit suscipit unde.",
           "type": "checkbox",
           "label": "Option checkbox",
           "name": "term",
           "value": true
         },
         {
+          "title": "Datepicker - lorem ipsum dolor sit amet",
+          "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi aspernatur consequuntur deleniti, deserunt eos\n      facilis fugiat libero odit suscipit unde.",
           "type": "date",
           "label": "Datepicker",
           "name": "datepicker",
