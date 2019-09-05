@@ -23,6 +23,26 @@
               "validator": "^[a-zA-Z]+$",
               "message": "Text element 1.1 accept only text"
             }
+          ],
+          "nested": [
+            {
+              "title": "Nested title 1.1",
+              "description": "Nested description 1.1",
+              "type": "input",
+              "label": "Nested text element 1.1",
+              "inputType": "text",
+              "name": "nested-text-element-1-1",
+              "value": ""
+            },
+            {
+              "title": "2 Nested title 1.2",
+              "description": "2 Nested description 1.2",
+              "type": "input",
+              "label": "2 Nested text element 1.2",
+              "inputType": "text",
+              "name": "nested-text-element-1-2",
+              "value": ""
+            }
           ]
         },
         {
@@ -107,5 +127,150 @@
         }
       ]
     }
-  ]
+  ],
+
+  "fancy": {
+    "name":"Knox pass PIN",
+    "type":"KNOX password policy settings",
+    "parameters":[
+      {
+        "param": {
+          "name":"Required password type",
+          "description":"Password needs to contain at least one character from selected type, e.g. for 'Alphanumerics - letters and numerics' type: at least 1 letter and 1 digit. PIN available from KNOX 2.0 or higher.",
+          "field_type":"select",
+          "value":"Zlozone - litery, cyfry oraz znaki specjalne",
+          "child_params": [
+            {
+              "param": {
+                "name":"Minimum password length",
+                "description":"Minimum length for lockcode value. Password\/PIN code length 4-16 chars.  For KNOX 1.X password\/PIN code length 6-16 chars.",
+                "field_type":"string",
+                "value":"8"
+              }
+            },
+            {
+              "param": {
+                "name":"Possibility to preview password while entering",
+                "description":"Option enables displaying password while entering KNOX container.",
+                "field_type":"select",
+                "value":"Nie"
+              }
+            },
+            {
+              "param": {
+                "name":"Minimum number of complex characters",
+                "description":"Number of sign 1-4. If equals 1, at least one digit is required. If greater than 1, at least one digit and at least one symbol are required.",
+                "field_type":"select",
+                "value":"Nie"
+              }
+            },
+            {
+              "param": {
+                "name":"Maximum number of the same character",
+                "description":"Any character cannot occur more than the specified maximum number of times, e.g. '3' for 'a' in 'aaabcde'",
+                "field_type":"string",
+                "value":"0"
+              }
+            },
+            {
+              "param": {
+                "name":"Maximum character sequence length",
+                "description":"Password must not contain alphabetic sequences greater than given lenght, e.g. '3' for 'abc' or 'zyx', 0 for no restriction",
+                "field_type":"string",
+                "value":"0"
+              }
+            },
+            {
+              "param": {
+                "name":"Maximum number sequence length",
+                "description":"Password must not contain numeric sequences greater than given lenght, e.g. '3' for '123' or '987', 0 for no restriction",
+                "field_type":"string",
+                "value":"0"
+              }
+            },
+            {
+              "param": {
+                "name":"Minimum number of changed characters",
+                "description":"Minimum number of changed characters that the new password string should have in comparison to the new one, 0 for no restrictions.",
+                "field_type":"string",
+                "value":"0"
+              }
+            },
+            {
+              "param": {
+                "name":"Disallowed strings",
+                "description":"Strings that cannot be used in lock code, e.g. test, password",
+                "field_type":"string",
+                "value":"password"
+              }
+            },
+            {
+              "param": {
+                "name":"Disallowed strings",
+                "description":"Strings that cannot be used in lock code, e.g. test, password",
+                "field_type":"string",
+                "value":"password1"
+              }
+            },
+            {
+              "param": {
+                "name":"Disallowed strings",
+                "description":"Strings that cannot be used in lock code, e.g. test, password",
+                "field_type":"string",
+                "value":"1234",
+              }
+            }
+          ]
+        }
+      },
+      {
+        "param": {
+          "name":"Lock code expiration",
+          "description":"Time in days when the lock code expires (0 - 365)",
+          "field_type":"string",
+          "value":"30"
+        }
+      },
+      {
+        "param": {
+          "name":"Passcode history",
+          "description":"The number of unique passcodes required before reuse (1-50 or 0 for none)",
+          "field_type":"string",
+          "value":"9"
+        }
+      },
+      {
+        "param": {
+          "name":"Autolock value",
+          "description":"Autolock period in minutes",
+          "field_type":"select",
+          "value":"5 minut"
+        }
+      },
+      {
+        "param": {
+          "name":"Maximum failed attempts",
+          "description":"Maximum failed attempts before Knox lock. Amount of attempts  1-10.",
+          "field_type":"string",
+          "value":"5"
+        }
+      },
+      {
+        "param": {
+          "name":"Allow Samsung Gear to extend KNOX autolock value",
+          "description":"Allow Samsung Gear to extend KNOX password autolock to 2 hours",
+          "field_type":"select",
+          "value":"Tak"
+        }
+      },
+      {
+        "param": {
+          "name":"Allow fingerprint",
+          "description":"'Fingerprint' value is supported only by devices with fingerprint reader.",
+          "field_type":"select",
+          "value":"Nie"
+        }
+      }
+    ]
+  }
 }

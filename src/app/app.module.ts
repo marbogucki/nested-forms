@@ -17,6 +17,8 @@ import { FormRadioComponent } from './components/form/form-radio/form-radio.comp
 import { FormCheckboxComponent } from './components/form/form-checkbox/form-checkbox.component';
 import { FormDateComponent } from './components/form/form-date/form-date.component';
 import { FormSlideToggleComponent } from './components/form/form-slide-toggle/form-slide-toggle.component';
+import {DynamicFancyFormComponent} from './components/dynamic-fancy-form/dynamic-fancy-form.component';
+import {DynamicFancyFormDialogComponent} from './components/dynamic-fancy-form-dialog/dynamic-fancy-form-dialog.component';
 
 @NgModule({
   declarations: [
@@ -24,6 +26,8 @@ import { FormSlideToggleComponent } from './components/form/form-slide-toggle/fo
     PhonesListComponent,
     DynamicFormDialogComponent,
     DynamicFormComponent,
+    DynamicFancyFormDialogComponent,
+    DynamicFancyFormComponent,
     FormInputComponent,
     DynamicFormFieldDirective,
     FormSelectComponent,
@@ -42,6 +46,7 @@ import { FormSlideToggleComponent } from './components/form/form-slide-toggle/fo
   ],
   entryComponents: [
     DynamicFormDialogComponent,
+    DynamicFancyFormDialogComponent,
     FormInputComponent,
     FormSelectComponent,
     FormRadioComponent,

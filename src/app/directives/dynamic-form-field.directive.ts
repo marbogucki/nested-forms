@@ -32,6 +32,7 @@ export class DynamicFormFieldDirective implements OnInit {
 
 const components = {
   input: FormInputComponent,
+  string: FormInputComponent,
   select: FormSelectComponent,
   radiobutton: FormRadioComponent,
   checkbox: FormCheckboxComponent,

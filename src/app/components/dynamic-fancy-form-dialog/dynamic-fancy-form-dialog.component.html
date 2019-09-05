@@ -1,0 +1,22 @@
+
+<header class="dialog-header">
+  <h1 mat-dialog-title>{{ formData.title }}</h1>
+</header>
+
+<div mat-dialog-content>
+  <pre>{{ dynamicFancyFormComponent.form.value | json }}</pre>
+  <br /><br />
+
+  <app-fancy-dynamic-form [fancyConfig]="formData.fancy"></app-fancy-dynamic-form>
+
+  <br /><br />
+</div>
+
+<div mat-dialog-actions>
+  <hr />
+  <button
+    mat-raised-button
+    color="primary"
+    [mat-dialog-close]=""
+    cdkFocusInitial>SAVE</button>
+</div>

@@ -14,4 +14,12 @@
   (phoneDataToEdit)="openDialogEditPhone($event)"
 ></app-phones-list>
 
+<div *ngIf="fancy">
+  <h4>{{ fancy.name }}</h4>
+  <button
+    mat-raised-button
+    color="primary"
+    (click)="openDialogEditFancy(fancy)">Edit</button>
+</div>
+
 <router-outlet></router-outlet>

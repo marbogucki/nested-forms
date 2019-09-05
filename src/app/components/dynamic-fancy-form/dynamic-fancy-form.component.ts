@@ -1,15 +1,16 @@
 import {Component, Input, OnInit} from '@angular/core';
 import {FormBuilder, FormControl, FormGroup, Validators} from '@angular/forms';
 import {PhoneData} from '../../services/phones.service';
+import {FancyDevice} from '../../services/fancy.service';
 
 @Component({
-  selector: 'app-dynamic-form',
-  templateUrl: './dynamic-form.component.html',
-  styleUrls: ['./dynamic-form.component.css']
+  selector: 'app-fancy-dynamic-form',
+  templateUrl: './dynamic-fancy-form.component.html',
+  styleUrls: ['./dynamic-fancy-form.component.css']
 })
-export class DynamicFormComponent implements OnInit {
+export class DynamicFancyFormComponent implements OnInit {
 
-  @Input() phoneConfig: PhoneData;
+  @Input() fancyConfig: FancyDevice;
   form: FormGroup;
 
   constructor(private fb: FormBuilder) { }
@@ -19,16 +20,16 @@ export class DynamicFormComponent implements OnInit {
   }
 
   createGroup() {
-    const { id, name } = this.phoneConfig;
-    const group = this.fb.group({id, name});
-    this.phoneConfig.config.forEach(field => {
-      const control = this.fb.control(field.value, this.bindValidations(field.validations || []));
-      group.addControl(field.name, control);
-
-      if (field.nested) {
-        group.addControl('nested', this.addNestedGroup(group, field));
-      }
-    });
+    const { name } = this.fancyConfig;
+    const group = this.fb.group({name});
+    // this.fancyConfig.config.forEach(field => {
+    //   const control = this.fb.control(field.value, this.bindValidations(field.validations || []));
+    //   group.addControl(field.name, control);
+    //
+    //   if (field.nested) {
+    //     group.addControl('nested', this.addNestedGroup(group, field));
+    //   }
+    // });
     return group;
   }
 
