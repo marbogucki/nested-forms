@@ -24,6 +24,12 @@
           ]
         },
         {
+          "type": "slideToggle",
+          "label": "Slide Toggle",
+          "checked": true,
+          "disabled": true
+        },
+        {
           "type": "select",
           "label": "Select element",
           "name": "select-element",

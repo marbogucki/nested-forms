@@ -16,6 +16,7 @@ import { FormSelectComponent } from './components/form/form-select/form-select.c
 import { FormRadioComponent } from './components/form/form-radio/form-radio.component';
 import { FormCheckboxComponent } from './components/form/form-checkbox/form-checkbox.component';
 import { FormDateComponent } from './components/form/form-date/form-date.component';
+import { FormSlideToggleComponent } from './components/form/form-slide-toggle/form-slide-toggle.component';
 
 @NgModule({
   declarations: [
@@ -29,6 +30,7 @@ import { FormDateComponent } from './components/form/form-date/form-date.compone
     FormRadioComponent,
     FormCheckboxComponent,
     FormDateComponent,
+    FormSlideToggleComponent,
   ],
   imports: [
     BrowserModule,
@@ -44,7 +46,8 @@ import { FormDateComponent } from './components/form/form-date/form-date.compone
     FormSelectComponent,
     FormRadioComponent,
     FormCheckboxComponent,
-    FormDateComponent
+    FormDateComponent,
+    FormSlideToggleComponent
   ],
   providers: [],
   bootstrap: [AppComponent]

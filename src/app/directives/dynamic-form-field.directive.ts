@@ -6,6 +6,7 @@ import {FormSelectComponent} from '../components/form/form-select/form-select.co
 import {FormRadioComponent} from '../components/form/form-radio/form-radio.component';
 import {FormCheckboxComponent} from '../components/form/form-checkbox/form-checkbox.component';
 import {FormDateComponent} from '../components/form/form-date/form-date.component';
+import {FormSlideToggleComponent} from '../components/form/form-slide-toggle/form-slide-toggle.component';
 
 @Directive({
   selector: '[appDynamicFormField]'
@@ -35,4 +36,5 @@ const components = {
   radiobutton: FormRadioComponent,
   checkbox: FormCheckboxComponent,
   date: FormDateComponent,
+  slideToggle: FormSlideToggleComponent
 };

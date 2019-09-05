@@ -4,11 +4,12 @@
 </header>
 
 <div mat-dialog-content>
+  <pre>{{ dynamicFormComponent.form.value | json }}</pre>
+  <br /><br />
+
   <app-dynamic-form [phoneConfig]="formData.phone"></app-dynamic-form>
 
   <br /><br />
-
-  <pre>{{ dynamicFormComponent.form.value | json }}</pre>
 </div>
 
 <div mat-dialog-actions>

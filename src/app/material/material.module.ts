@@ -13,7 +13,8 @@ import {
   MatOptionModule,
   MatCheckboxModule,
   MatRadioModule,
-  MatDialogModule
+  MatDialogModule,
+  MatSlideToggleModule
 } from '@angular/material';
 
 const MaterialModules = [
@@ -29,7 +30,8 @@ const MaterialModules = [
   MatOptionModule,
   MatCheckboxModule,
   MatRadioModule,
-  MatDialogModule
+  MatDialogModule,
+  MatSlideToggleModule
 ];
 
 @NgModule({

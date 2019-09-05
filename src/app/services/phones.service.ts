@@ -53,6 +53,8 @@ export interface FormField {
   validations?: Validator[];
   type?: string;
   options?: string;
+  checked?: boolean;
+  disabled?: boolean;
 }
 
 export interface Validator {
