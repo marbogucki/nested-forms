@@ -9,9 +9,9 @@ import {FormDateComponent} from '../components/form/form-date/form-date.componen
 import {FormSlideToggleComponent} from '../components/form/form-slide-toggle/form-slide-toggle.component';
 
 @Directive({
-  selector: '[appDynamicFormField]'
+  selector: '[appDynamicFancyFormField]'
 })
-export class DynamicFormFieldDirective implements OnInit {
+export class DynamicFancyFormFieldDirective implements OnInit {
   @Input() field: FormField;
   @Input() group: FormGroup;
   componentRef: any;

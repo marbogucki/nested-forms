@@ -22,13 +22,13 @@ export class DynamicFancyFormComponent implements OnInit {
   createGroup() {
     const { name } = this.fancyConfig;
     const group = this.fb.group({name});
+    this.fancyConfig.parameters.forEach(item => {
+      const control = this.fb.control(item.param.value);
+      group.addControl(item.param.name, control);
+    });
     // this.fancyConfig.config.forEach(field => {
     //   const control = this.fb.control(field.value, this.bindValidations(field.validations || []));
     //   group.addControl(field.name, control);
-    //
-    //   if (field.nested) {
-    //     group.addControl('nested', this.addNestedGroup(group, field));
-    //   }
     // });
     return group;
   }

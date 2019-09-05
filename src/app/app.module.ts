@@ -19,6 +19,7 @@ import { FormDateComponent } from './components/form/form-date/form-date.compone
 import { FormSlideToggleComponent } from './components/form/form-slide-toggle/form-slide-toggle.component';
 import {DynamicFancyFormComponent} from './components/dynamic-fancy-form/dynamic-fancy-form.component';
 import {DynamicFancyFormDialogComponent} from './components/dynamic-fancy-form-dialog/dynamic-fancy-form-dialog.component';
+import {DynamicFancyFormFieldDirective} from './directives/dynamic-fancy-form-field.directive';
 
 @NgModule({
   declarations: [
@@ -28,6 +29,7 @@ import {DynamicFancyFormDialogComponent} from './components/dynamic-fancy-form-d
     DynamicFormComponent,
     DynamicFancyFormDialogComponent,
     DynamicFancyFormComponent,
+    DynamicFancyFormFieldDirective,
     FormInputComponent,
     DynamicFormFieldDirective,
     FormSelectComponent,

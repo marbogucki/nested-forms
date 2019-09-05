@@ -1,15 +1,17 @@
 <form [formGroup]="form">
 
-  <p>Phone name: <b>{{ fancyConfig.name }}</b></p>
+  <p>Name: <b>{{ fancyConfig.name }}</b></p>
+  <p>Type: <b>{{ fancyConfig.type }}</b></p>
 
-<!--  <div *ngFor="let fieldForm of phoneConfig.config" style="margin-bottom: 30px;">-->
-<!--    <h3 *ngIf="fieldForm.title">{{ fieldForm.title }}</h3>-->
-<!--    <p *ngIf="fieldForm.description">{{ fieldForm.description }}</p>-->
+  <div *ngFor="let fieldForm of fancyConfig.parameters" style="margin-bottom: 30px;">
+    <h3 *ngIf="fieldForm.param.name">{{ fieldForm.param.name }}</h3>
+    <p *ngIf="fieldForm.param.description">{{ fieldForm.param.description }}</p>
 
+<!--    {{ fieldForm.param | json }}-->
 <!--    <ng-container-->
-<!--      appDynamicFormField-->
-<!--      [field]="fieldForm"-->
+<!--      appDynamicFancyFormField-->
+<!--      [field]="fieldForm.param"-->
 <!--      [group]="form"></ng-container>-->
-<!--  </div>-->
+  </div>
 
 </form>
