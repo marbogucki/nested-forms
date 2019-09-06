@@ -17,7 +17,7 @@ export class DynamicFancyFormComponent implements OnInit {
 
   ngOnInit() {
     this.form = this.createGroup();
-    this.form.disable();
+    // this.form.disable();
   }
 
   createGroup() {
@@ -26,19 +26,17 @@ export class DynamicFancyFormComponent implements OnInit {
     this.fancyConfig.parameters.forEach(item => {
       const control = this.fb.control(item.param.value);
       group.addControl(item.param.name, control);
+      this.createNestedGroup(group, 'child_params', item.param.child_params);
     });
-    // this.fancyConfig.config.forEach(field => {
-    //   const control = this.fb.control(field.value, this.bindValidations(field.validations || []));
-    //   group.addControl(field.name, control);
-    // });
     return group;
   }
 
-  addNestedGroup(group, field) {
-    return this.fb.group({
-      nested: this.fb.array(field.nested)
-    });
+  createNestedGroup(group: FormGroup, groupName: string, childItems: FancyDevice[]) {
+    if (childItems) {
+      group.addControl(groupName, this.fb.array(childItems));
+    }
   }
+
 
   bindValidations(validations: any) {
     if (validations.length > 0) {
