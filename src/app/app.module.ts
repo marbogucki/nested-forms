@@ -22,6 +22,7 @@ import {DynamicFancyFormDialogComponent} from './components/dynamic-fancy-form-d
 import {DynamicFancyFormFieldDirective} from './directives/dynamic-fancy-form-field.directive';
 import {FormFancyInputComponent} from './components/fancy-form/form-fancy-input/form-fancy-input.component';
 import {FormFancySelectComponent} from './components/fancy-form/form-fancy-select/form-fancy-select.component';
+import { FormFancyPasswordComponent } from './components/fancy-form/form-fancy-password/form-fancy-password.component';
 
 @NgModule({
   declarations: [
@@ -40,7 +41,8 @@ import {FormFancySelectComponent} from './components/fancy-form/form-fancy-selec
     FormDateComponent,
     FormSlideToggleComponent,
     FormFancyInputComponent,
-    FormFancySelectComponent
+    FormFancySelectComponent,
+    FormFancyPasswordComponent
   ],
   imports: [
     BrowserModule,
@@ -60,7 +62,8 @@ import {FormFancySelectComponent} from './components/fancy-form/form-fancy-selec
     FormDateComponent,
     FormSlideToggleComponent,
     FormFancyInputComponent,
-    FormFancySelectComponent
+    FormFancySelectComponent,
+    FormFancyPasswordComponent
   ],
   providers: [],
   bootstrap: [AppComponent]

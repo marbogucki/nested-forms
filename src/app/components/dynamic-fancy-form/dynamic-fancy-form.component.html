@@ -12,6 +12,19 @@
       appDynamicFancyFormField
       [field]="fieldForm.param"
       [group]="form"></ng-container>
+
+    <div formArrayName="child_params" *ngIf="fieldForm.param.child_params">
+      <div *ngFor="let childFieldForm of fieldForm.param.child_params; let num = index;">
+<!--        {{ num }}-->
+<!--        <div>-->
+<!--          <ng-container-->
+<!--            appDynamicFancyFormField-->
+<!--            [field]="childFieldForm.param"-->
+<!--            [group]="form"></ng-container>-->
+<!--        </div>-->
+      </div>
+    </div>
+
   </div>
 
 </form>

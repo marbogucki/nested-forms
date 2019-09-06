@@ -25,7 +25,7 @@ export class DynamicFancyFormComponent implements OnInit {
     const group = this.fb.group({name});
     this.fancyConfig.parameters.forEach(item => {
       const control = this.fb.control(item.param.value);
-      group.addControl(item.param.name, control);
+      group.addControl(item.param.field_name, control);
       this.createNestedGroup(group, 'child_params', item.param.child_params);
     });
     return group;

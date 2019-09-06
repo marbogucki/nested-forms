@@ -137,8 +137,9 @@
         "param": {
           "name":"Required password type",
           "description":"Password needs to contain at least one character from selected type, e.g. for 'Alphanumerics - letters and numerics' type: at least 1 letter and 1 digit. PIN available from KNOX 2.0 or higher.",
-          "field_type":"string",
-          "value":"Zlozone - litery, cyfry oraz znaki specjalne",
+          "field_name": "password",
+          "field_type":"password",
+          "value":"3l6&4das#Da9",
           "child_params": [
             {
               "param": {
@@ -227,6 +228,7 @@
         "param": {
           "name":"Lock code expiration",
           "description":"Time in days when the lock code expires (0 - 365)",
+          "field_name": "lock-code-expiration",
           "field_type":"string",
           "value":"30"
         }
@@ -235,6 +237,7 @@
         "param": {
           "name":"Passcode history",
           "description":"The number of unique passcodes required before reuse (1-50 or 0 for none)",
+          "field_name": "passcode-history",
           "field_type":"string",
           "value":"9"
         }
@@ -243,15 +246,22 @@
         "param": {
           "name":"Autolock value",
           "description":"Autolock period in minutes",
+          "field_name": "autolock",
           "field_type":"select",
           "options": ["5 minut", "10 minut"],
-          "value":"5 minut"
+          "value":"5 minut",
+          "options": [
+            {"value": "0", "viewValue":  "5 minut"},
+            {"value": "1", "viewValue":  "10 minut"}
+          ],
+          "value":"0"
         }
       },
       {
         "param": {
           "name":"Maximum failed attempts",
           "description":"Maximum failed attempts before Knox lock. Amount of attempts  1-10.",
+          "field_name": "maximum-failed-attempts",
           "field_type":"string",
           "value":"5"
         }
@@ -260,18 +270,26 @@
         "param": {
           "name":"Allow Samsung Gear to extend KNOX autolock value",
           "description":"Allow Samsung Gear to extend KNOX password autolock to 2 hours",
+          "field_name": "knox-password-autolock",
           "field_type":"select",
-          "options": ["Tak", "Nie"],
-          "value":"Tak"
+          "options": [
+            {"value": "0", "viewValue":  "Nie"},
+            {"value": "1", "viewValue":  "Tak"}
+          ],
+          "value":"1"
         }
       },
       {
         "param": {
           "name":"Allow fingerprint",
           "description":"'Fingerprint' value is supported only by devices with fingerprint reader.",
+          "field_name": "allow-fingerprint",
           "field_type":"select",
-          "options": ["Tak", "Nie"],
-          "value":"Nie"
+          "options": [
+            {"value": "0", "viewValue":  "Nie"},
+            {"value": "1", "viewValue":  "Tak"}
+          ],
+          "value":"0"
         }
       }
     ]

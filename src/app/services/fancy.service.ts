@@ -27,6 +27,14 @@ export interface FancyDeviceParam {
   name?: string;
   description?: string;
   field_type?: 'string' | 'select';
+  field_name?: string;
   value?: string;
+  options?: FancySelectOption[];
   child_params?: any[];
+}
+
+
+export interface FancySelectOption {
+  value: string;
+  viewValue: string;
 }
