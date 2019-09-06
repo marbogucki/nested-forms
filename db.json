@@ -137,7 +137,7 @@
         "param": {
           "name":"Required password type",
           "description":"Password needs to contain at least one character from selected type, e.g. for 'Alphanumerics - letters and numerics' type: at least 1 letter and 1 digit. PIN available from KNOX 2.0 or higher.",
-          "field_type":"select",
+          "field_type":"string",
           "value":"Zlozone - litery, cyfry oraz znaki specjalne",
           "child_params": [
             {
@@ -244,6 +244,7 @@
           "name":"Autolock value",
           "description":"Autolock period in minutes",
           "field_type":"select",
+          "options": ["5 minut", "10 minut"],
           "value":"5 minut"
         }
       },
@@ -260,6 +261,7 @@
           "name":"Allow Samsung Gear to extend KNOX autolock value",
           "description":"Allow Samsung Gear to extend KNOX password autolock to 2 hours",
           "field_type":"select",
+          "options": ["Tak", "Nie"],
           "value":"Tak"
         }
       },
@@ -268,6 +270,7 @@
           "name":"Allow fingerprint",
           "description":"'Fingerprint' value is supported only by devices with fingerprint reader.",
           "field_type":"select",
+          "options": ["Tak", "Nie"],
           "value":"Nie"
         }
       }

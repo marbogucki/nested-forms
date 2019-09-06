@@ -2,6 +2,7 @@ import {ComponentFactoryResolver, Directive, Input, OnInit, ViewContainerRef} fr
 import {FormGroup} from '@angular/forms';
 import {FormFancyInputComponent} from '../components/fancy-form/form-fancy-input/form-fancy-input.component';
 import {FancyDeviceParam} from '../services/fancy.service';
+import {FormFancySelectComponent} from '../components/fancy-form/form-fancy-select/form-fancy-select.component';
 
 @Directive({
   selector: '[appDynamicFancyFormField]'
@@ -27,4 +28,5 @@ export class DynamicFancyFormFieldDirective implements OnInit {
 
 const components = {
   string: FormFancyInputComponent,
+  select: FormFancySelectComponent
 };

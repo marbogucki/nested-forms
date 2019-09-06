@@ -40,9 +40,7 @@ export class AppComponent implements OnInit {
       panelClass: 'custom-form-dialog'
     });
 
-    dialogRef.afterClosed().subscribe((result) => {
-      console.log('closed', result);
-    });
+    dialogRef.afterClosed().subscribe();
   }
 
   openDialogEditPhone(phone: PhoneData) {
