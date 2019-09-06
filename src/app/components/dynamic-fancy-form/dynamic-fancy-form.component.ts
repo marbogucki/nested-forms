@@ -17,6 +17,7 @@ export class DynamicFancyFormComponent implements OnInit {
 
   ngOnInit() {
     this.form = this.createGroup();
+    this.form.disable();
   }
 
   createGroup() {
