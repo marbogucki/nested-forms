@@ -38,26 +38,26 @@ export class DynamicFancyFormComponent implements OnInit {
   }
 
 
-  bindValidations(validations: any) {
-    if (validations.length > 0) {
-      const validList = [];
-      validations.forEach(valid => {
-        if (valid.name === 'pattern') {
-          validList.push(Validators.pattern(valid.validator));
-        } else {
-          validList.push(Validators[valid.validator]);
-        }
-      });
-      return Validators.compose(validList);
-    }
-    return null;
-  }
-
-  validateAllFormFields(formGroup: FormGroup) {
-    Object.keys(formGroup.controls).forEach(field => {
-      const control = formGroup.get(field);
-      control.markAsTouched({ onlySelf: true });
-    });
-  }
+  // bindValidations(validations: any) {
+  //   if (validations.length > 0) {
+  //     const validList = [];
+  //     validations.forEach(valid => {
+  //       if (valid.name === 'pattern') {
+  //         validList.push(Validators.pattern(valid.validator));
+  //       } else {
+  //         validList.push(Validators[valid.validator]);
+  //       }
+  //     });
+  //     return Validators.compose(validList);
+  //   }
+  //   return null;
+  // }
+  //
+  // validateAllFormFields(formGroup: FormGroup) {
+  //   Object.keys(formGroup.controls).forEach(field => {
+  //     const control = formGroup.get(field);
+  //     control.markAsTouched({ onlySelf: true });
+  //   });
+  // }
 
 }

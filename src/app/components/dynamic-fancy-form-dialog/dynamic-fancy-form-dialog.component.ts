@@ -1,7 +1,6 @@
 import {Component, EventEmitter, Inject, Output, ViewChild} from '@angular/core';
 import {MAT_DIALOG_DATA} from '@angular/material/dialog';
 import {PhoneData} from '../../services/phones.service';
-import {DynamicFormComponent} from '../dynamic-form/dynamic-form.component';
 import {FancyDevice} from '../../services/fancy.service';
 import {DynamicFancyFormComponent} from '../dynamic-fancy-form/dynamic-fancy-form.component';
 
