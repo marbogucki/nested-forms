@@ -23,17 +23,24 @@ export class DynamicFancyFormComponent implements OnInit {
   createGroup() {
     const { name } = this.fancyConfig;
     const group = this.fb.group({name});
-    this.fancyConfig.parameters.forEach(item => {
-      const control = this.fb.control(item.param.value);
-      group.addControl(item.param.field_name, control);
-      this.createNestedGroup(group, 'child_params', item.param.child_params);
+    this.fancyConfig.parameters.forEach(({ param }) => {
+      const control = this.fb.control(param.value);
+      group.addControl(param.field_name, control);
+      this.createNestedArrayGroup(param, group);
     });
     return group;
   }
 
-  createNestedGroup(group: FormGroup, groupName: string, childItems: FancyDevice[]) {
-    if (childItems) {
-      group.addControl(groupName, this.fb.array(childItems));
+  createNestedArrayGroup(element, group) {
+    if (element.child_params) {
+      const arrayGroup = this.fb.array([]);
+      element.child_params.forEach(({ param }) => {
+        arrayGroup.push(this.fb.group({
+          [param.field_name]: param.value
+        }));
+      });
+
+      group.addControl('childParams', arrayGroup);
     }
   }
 

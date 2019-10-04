@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import {Component, Input} from '@angular/core';
 import {FormGroup} from '@angular/forms';
 import {FancyDeviceParam} from '../../../services/fancy.service';
 
@@ -8,6 +8,6 @@ import {FancyDeviceParam} from '../../../services/fancy.service';
   styleUrls: ['./form-fancy-select.component.css']
 })
 export class FormFancySelectComponent {
-  field: FancyDeviceParam;
-  group: FormGroup;
+  @Input() field: FancyDeviceParam;
+  @Input() group: FormGroup;
 }

@@ -3,6 +3,8 @@
   <p>Name: <b>{{ fancyConfig.name }}</b></p>
   <p>Type: <b>{{ fancyConfig.type }}</b></p>
 
+  <pre>{{ this.form.value | json }}</pre>
+
   <div *ngFor="let fieldForm of fancyConfig.parameters" style="margin-bottom: 30px;">
     <h3 *ngIf="fieldForm.param.name">{{ fieldForm.param.name }}</h3>
     <p *ngIf="fieldForm.param.description">{{ fieldForm.param.description }}</p>
@@ -13,17 +15,18 @@
       [field]="fieldForm.param"
       [group]="form"></ng-container>
 
-    <div formArrayName="child_params" *ngIf="fieldForm.param.child_params">
-      <div *ngFor="let childFieldForm of fieldForm.param.child_params; let num = index;">
-<!--        {{ num }}-->
-<!--        <div>-->
-<!--          <ng-container-->
-<!--            appDynamicFancyFormField-->
-<!--            [field]="childFieldForm.param"-->
-<!--            [group]="form"></ng-container>-->
-<!--        </div>-->
+    <div *ngIf="fieldForm.param.child_params" style="margin-left: 150px;">
+      <div formArrayName="childParams">
+        <div *ngFor="let childFieldForm of fieldForm.param.child_params; let num = index;">
+
+          <ng-container
+            appDynamicFancyFormField
+            [field]="childFieldForm"
+            [group]="form"></ng-container>
+        </div>
       </div>
     </div>
+
 
   </div>
 
