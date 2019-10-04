@@ -1,9 +1,9 @@
 <ng-container [ngSwitch]="formConfig.type" *ngIf="formConfig">
   <mat-form-field class="demo-full-width" *ngSwitchCase="'simple-field'">
-    <input matInput [placeholder]="formConfig.title" type="text">
+    <input matInput [placeholder]="formConfig.title" type="text" [formControl]="form">
   </mat-form-field>
   <mat-form-field *ngSwitchCase="'select'">
-    <mat-select [placeholder]="formConfig.title">
+    <mat-select [placeholder]="formConfig.title" [formControl]="form">
       <mat-option *ngFor="let item of formConfig['options']" [value]="item.key">{{item.value}}</mat-option>
     </mat-select>
   </mat-form-field>
@@ -14,7 +14,7 @@
         {{formConfig.title}}
       </mat-card-title>
       <mat-card-content>
-        <app-generic-form [formConfig]="childConfig" *ngFor="let childConfig of formConfig['children']">
+        <app-generic-form [formConfig]="childConfig" *ngFor="let childConfig of formConfig['children']" [form]="getFormControlByName(childConfig.name)">
         </app-generic-form>
       </mat-card-content>
     </mat-card>

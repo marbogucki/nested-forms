@@ -1,4 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
+import { AbstractControl, FormGroup } from '@angular/forms';
 
 export type FieldTypes = SimpleField | Select | ComplexField;
 
@@ -33,9 +34,17 @@ export class GenericFormComponent implements OnInit {
   @Input()
   formConfig: Field;
 
+  @Input()
+  form: AbstractControl;
+
   constructor() { }
 
   ngOnInit() {
+  }
+
+  getFormControlByName(controlName: string): AbstractControl {
+    const fg = this.form as FormGroup;
+    return fg.get(controlName);
   }
 
 }

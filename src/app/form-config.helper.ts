@@ -1,6 +1,30 @@
-import { Field, ComplexField } from './components/generic-form/generic-form.component';
+import { Field, ComplexField, FieldTypes } from './components/generic-form/generic-form.component';
+import { AbstractControl, FormGroup, FormControl } from '@angular/forms';
 
-export function getFormConfig(): Field {
+export function buildForm(field: FieldTypes): AbstractControl {
+  let result: AbstractControl;
+  switch (field.type) {
+    case 'complex-field': {
+      const fieldConfig = field.children.reduce((acc, current) => {
+        acc[current.name] = buildForm(current);
+        return acc;
+      }, {});
+      result = new FormGroup(fieldConfig);
+      break;
+    }
+    case 'simple-field':
+      result = new FormControl();
+      break;
+    case 'select':
+      result = new FormControl();
+      break;
+    default:
+      throw new Error(`Unsupported type`);
+  }
+  return result;
+}
+
+export function getFormConfig(): FieldTypes {
   const form: ComplexField = {
     type: 'complex-field',
     name: 'Root',
@@ -46,4 +70,19 @@ export function getFormConfig(): Field {
     ]
   };
   return form;
+}
+
+
+export function createSample() {
+  return {
+    field1: 'Hello',
+    field2: 'World',
+    select: 'option2',
+    subfield: {
+      subfield: 'Important info',
+      subobject: {
+        field: 'Even more important info'
+      }
+    }
+  }
 }
