@@ -15,6 +15,7 @@
               "param": {
                 "name":"Minimum password length",
                 "description":"Minimum length for lockcode value. Password\/PIN code length 4-16 chars.  For KNOX 1.X password\/PIN code length 6-16 chars.",
+                "field_name": "minimumPasswordLength",
                 "field_type":"string",
                 "value":"8"
               }
@@ -23,6 +24,7 @@
               "param": {
                 "name":"Possibility to preview password while entering",
                 "description":"Option enables displaying password while entering KNOX container.",
+                "field_name": "Possibility",
                 "field_type":"select",
                 "value":"Nie"
               }
@@ -31,64 +33,9 @@
               "param": {
                 "name":"Minimum number of complex characters",
                 "description":"Number of sign 1-4. If equals 1, at least one digit is required. If greater than 1, at least one digit and at least one symbol are required.",
+                "field_name": "MinimumNumberOfComplexCharacters",
                 "field_type":"select",
                 "value":"Nie"
-              }
-            },
-            {
-              "param": {
-                "name":"Maximum number of the same character",
-                "description":"Any character cannot occur more than the specified maximum number of times, e.g. '3' for 'a' in 'aaabcde'",
-                "field_type":"string",
-                "value":"0"
-              }
-            },
-            {
-              "param": {
-                "name":"Maximum character sequence length",
-                "description":"Password must not contain alphabetic sequences greater than given lenght, e.g. '3' for 'abc' or 'zyx', 0 for no restriction",
-                "field_type":"string",
-                "value":"0"
-              }
-            },
-            {
-              "param": {
-                "name":"Maximum number sequence length",
-                "description":"Password must not contain numeric sequences greater than given lenght, e.g. '3' for '123' or '987', 0 for no restriction",
-                "field_type":"string",
-                "value":"0"
-              }
-            },
-            {
-              "param": {
-                "name":"Minimum number of changed characters",
-                "description":"Minimum number of changed characters that the new password string should have in comparison to the new one, 0 for no restrictions.",
-                "field_type":"string",
-                "value":"0"
-              }
-            },
-            {
-              "param": {
-                "name":"Disallowed strings",
-                "description":"Strings that cannot be used in lock code, e.g. test, password",
-                "field_type":"string",
-                "value":"password"
-              }
-            },
-            {
-              "param": {
-                "name":"Disallowed strings",
-                "description":"Strings that cannot be used in lock code, e.g. test, password",
-                "field_type":"string",
-                "value":"password1"
-              }
-            },
-            {
-              "param": {
-                "name":"Disallowed strings",
-                "description":"Strings that cannot be used in lock code, e.g. test, password",
-                "field_type":"string",
-                "value":"1234"
               }
             }
           ]

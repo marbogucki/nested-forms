@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve --port 4500",
+    "start": "concurrently \"ng serve --port 4500\" \"json-server --watch db.json\" ",
     "server": "json-server --watch db.json",
     "build": "ng build",
     "test": "ng test",
@@ -22,6 +22,7 @@
     "@angular/platform-browser": "~7.2.0",
     "@angular/platform-browser-dynamic": "~7.2.0",
     "@angular/router": "~7.2.0",
+    "concurrently": "^4.1.2",
     "core-js": "^2.5.4",
     "rxjs": "~6.3.3",
     "tslib": "^1.9.0",

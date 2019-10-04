@@ -14,6 +14,7 @@ import {DynamicFancyFormFieldDirective} from './directives/dynamic-fancy-form-fi
 import {FormFancyInputComponent} from './components/fancy-form/form-fancy-input/form-fancy-input.component';
 import {FormFancySelectComponent} from './components/fancy-form/form-fancy-select/form-fancy-select.component';
 import { FormFancyPasswordComponent } from './components/fancy-form/form-fancy-password/form-fancy-password.component';
+import {FormInputWithoutGroupComponent} from './components/fancy-form/form-input-without-group/form-input-without-group';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { FormFancyPasswordComponent } from './components/fancy-form/form-fancy-p
     DynamicFancyFormFieldDirective,
     FormFancyInputComponent,
     FormFancySelectComponent,
-    FormFancyPasswordComponent
+    FormFancyPasswordComponent,
+    FormInputWithoutGroupComponent
   ],
   imports: [
     BrowserModule,
