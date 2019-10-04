@@ -2,6 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import {MatDialog} from '@angular/material';
 import {FancyDevice, FancyService} from './services/fancy.service';
 import {DynamicFancyFormDialogComponent} from './components/dynamic-fancy-form-dialog/dynamic-fancy-form-dialog.component';
+import { getFormConfig } from './form-config.helper';
 
 @Component({
   selector: 'app-root',
@@ -10,7 +11,7 @@ import {DynamicFancyFormDialogComponent} from './components/dynamic-fancy-form-d
 })
 export class AppComponent implements OnInit {
   fancy: FancyDevice;
-
+  formConfig = getFormConfig();
   constructor(
     private fancyService: FancyService,
     public formDialog: MatDialog
