@@ -1,12 +1,12 @@
 import { Field, ComplexField, FieldTypes } from './components/generic-form/generic-form.component';
-import { AbstractControl, FormGroup, FormControl } from '@angular/forms';
+import { AbstractControl, FormGroup, FormControl, FormArray } from '@angular/forms';
 
-export function buildForm(field: FieldTypes): AbstractControl {
+export function buildForm(field: FieldTypes, value: any): AbstractControl {
   let result: AbstractControl;
   switch (field.type) {
     case 'complex-field': {
       const fieldConfig = field.children.reduce((acc, current) => {
-        acc[current.name] = buildForm(current);
+        acc[current.name] = buildForm(current, value[current.name]);
         return acc;
       }, {});
       result = new FormGroup(fieldConfig);
@@ -17,6 +17,12 @@ export function buildForm(field: FieldTypes): AbstractControl {
       break;
     case 'select':
       result = new FormControl();
+      break;
+    case 'array-field':
+      const arr = value as any[];
+      result = new FormArray(
+        arr.map(x => buildForm(field.elementType, x))
+      );
       break;
     default:
       throw new Error(`Unsupported type`);
@@ -66,6 +72,15 @@ export function getFormConfig(): FieldTypes {
             name: 'field'
           }]
         }]
+      }, {
+        type: 'array-field',
+        title: 'Array',
+        name: 'array',
+        elementType: {
+          type: 'simple-field',
+          title: 'Array Element',
+          name: 'array-element'
+        }
       }
     ]
   };
@@ -83,6 +98,9 @@ export function createSample() {
       subobject: {
         field: 'Even more important info'
       }
-    }
-  }
+    },
+    array: [
+      'element1', 'element2', 'element3'
+    ]
+  };
 }

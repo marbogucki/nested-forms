@@ -1,7 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { AbstractControl, FormGroup } from '@angular/forms';
+import { AbstractControl, FormGroup, FormArray } from '@angular/forms';
 
-export type FieldTypes = SimpleField | Select | ComplexField;
+export type FieldTypes = SimpleField | Select | ComplexField | ArrayField;
 
 export interface Field {
   type: string;
@@ -22,6 +22,11 @@ export interface Select extends Field {
 export interface ComplexField  extends Field {
   type: 'complex-field';
   children: FieldTypes[];
+}
+
+export interface ArrayField extends Field {
+  type: 'array-field';
+  elementType: FieldTypes;
 }
 
 @Component({
@@ -47,4 +52,7 @@ export class GenericFormComponent implements OnInit {
     return fg.get(controlName);
   }
 
+  getFormArray() {
+    return this.form as FormArray;
+  }
 }

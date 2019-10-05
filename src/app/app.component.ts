@@ -3,6 +3,7 @@ import {MatDialog} from '@angular/material';
 import {FancyDevice, FancyService} from './services/fancy.service';
 import {DynamicFancyFormDialogComponent} from './components/dynamic-fancy-form-dialog/dynamic-fancy-form-dialog.component';
 import { getFormConfig, buildForm, createSample } from './form-config.helper';
+import { AbstractControl } from '@angular/forms';
 
 @Component({
   selector: 'app-root',
@@ -12,12 +13,13 @@ import { getFormConfig, buildForm, createSample } from './form-config.helper';
 export class AppComponent implements OnInit {
   fancy: FancyDevice;
   formConfig = getFormConfig();
-  formControl = buildForm(this.formConfig);
+  formControl: AbstractControl;
   constructor(
     private fancyService: FancyService,
     public formDialog: MatDialog
   ) {
     const value = createSample();
+    this.formControl = buildForm(this.formConfig, value);
     this.formControl.patchValue(value);
   }
 

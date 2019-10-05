@@ -14,9 +14,17 @@
         {{formConfig.title}}
       </mat-card-title>
       <mat-card-content>
-        <app-generic-form [formConfig]="childConfig" *ngFor="let childConfig of formConfig['children']" [form]="getFormControlByName(childConfig.name)">
+        <app-generic-form [formConfig]="childConfig" *ngFor="let childConfig of formConfig['children']"
+          [form]="getFormControlByName(childConfig.name)">
         </app-generic-form>
       </mat-card-content>
+    </mat-card>
+  </ng-container>
+  <ng-container *ngSwitchCase="'array-field'">
+    <mat-card style="margin-top: 10px">
+      <app-generic-form [formConfig]="formConfig['elementType']"
+        *ngFor="let formArrayElement of getFormArray().controls" [form]="formArrayElement">
+      </app-generic-form>
     </mat-card>
   </ng-container>
 </ng-container>
