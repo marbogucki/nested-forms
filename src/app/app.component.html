@@ -1,9 +1,13 @@
-<div *ngIf="fancy">
-  <h4>{{ fancy.name }}</h4>
-  <button
-    mat-raised-button
-    color="primary"
-    (click)="openDialogEditFancy(fancy)">Edit</button>
+<div style="display: flex; flex-direction: row">
+  <div class="col">
+    <app-generic-form [formConfig]="formConfig" [form]="formControl"></app-generic-form>
+  </div>
+  <pre class="col">
+    {{formControl.value | json}}
+  </pre>
 </div>
 
+<div>
+
+</div>
 <router-outlet></router-outlet>

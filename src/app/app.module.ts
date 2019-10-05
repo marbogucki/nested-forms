@@ -15,6 +15,7 @@ import {FormFancyInputComponent} from './components/fancy-form/form-fancy-input/
 import {FormFancySelectComponent} from './components/fancy-form/form-fancy-select/form-fancy-select.component';
 import { FormFancyPasswordComponent } from './components/fancy-form/form-fancy-password/form-fancy-password.component';
 import {FormInputWithoutGroupComponent} from './components/fancy-form/form-input-without-group/form-input-without-group';
+import { GenericFormComponent } from './components/generic-form/generic-form.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import {FormInputWithoutGroupComponent} from './components/fancy-form/form-input
     FormFancyInputComponent,
     FormFancySelectComponent,
     FormFancyPasswordComponent,
-    FormInputWithoutGroupComponent
+    FormInputWithoutGroupComponent,
+    GenericFormComponent
   ],
   imports: [
     BrowserModule,

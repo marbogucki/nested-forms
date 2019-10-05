@@ -1,0 +1,33 @@
+<ng-container [ngSwitch]="formConfig.type" *ngIf="formConfig">
+  <mat-form-field class="demo-full-width" *ngSwitchCase="'simple-field'">
+    <input matInput [placeholder]="formConfig.title" type="text" [formControl]="form">
+  </mat-form-field>
+  <mat-form-field *ngSwitchCase="'select'">
+    <mat-select [placeholder]="formConfig.title" [formControl]="form">
+      <mat-option *ngFor="let item of formConfig['options']" [value]="item.key">{{item.value}}</mat-option>
+    </mat-select>
+  </mat-form-field>
+
+  <ng-container *ngSwitchCase="'complex-field'">
+    <mat-card>
+      <mat-card-title>
+        {{formConfig.title}}
+      </mat-card-title>
+      <mat-card-content>
+        <app-generic-form [formConfig]="childConfig" *ngFor="let childConfig of formConfig['children']"
+          [form]="getFormControlByName(childConfig.name)">
+        </app-generic-form>
+      </mat-card-content>
+    </mat-card>
+  </ng-container>
+  <ng-container *ngSwitchCase="'array-field'">
+    <mat-card style="margin-top: 10px">
+      <app-generic-form [formConfig]="formConfig['elementType']"
+        *ngFor="let formArrayElement of getFormArray().controls" [form]="formArrayElement">
+      </app-generic-form>
+    </mat-card>
+  </ng-container>
+</ng-container>
+<p *ngIf="!formConfig">
+  No Form Config!
+</p>
